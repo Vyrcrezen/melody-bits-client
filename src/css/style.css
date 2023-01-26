@@ -1,0 +1,376 @@
+
+:root {
+    /* --vy-primary-color: 38, 32, 75; */
+    /* --vy-primary-color: 201, 217, 235; */
+    --vy-primary-color: 61,82,92;
+    --vy-secondary-color: 108, 170, 191;
+    --vy-site-color: 30, 30, 30;
+    --vy-element-color: 230, 246, 251;
+    --vy-selection-color: 156, 120, 173;
+    --vy-white-color: 240, 240, 240;
+
+    --vy-buffered-color: 163, 183, 194;
+
+    --bs-link-color: #a1caff;
+
+    --vy-dark: 30, 30, 30;
+    --vy-bright: 240, 240, 240;
+    --vy-primary: 61, 82, 92;
+    --vy-secondary: 108, 170, 191;
+    --vy-gray: 139, 139, 139;
+    --vy-selection: 156, 120, 173;
+
+    --vy-good-br: 0, 144, 136;
+    --vy-good-dr: 4, 85, 80;
+    --vy-link-dr: 5, 56, 131;
+    --vy-error-dr: 61, 8, 18;
+    --vy-error-br: 217, 37, 69;
+
+    --vy-tertiary: 86, 113, 125;
+}
+
+.vy-dark {
+    color: rgb(var(--vy-dark));
+}
+.vy-bright {
+    color: rgb(var(--vy-bright));
+}
+.vy-primary {
+    color: rgb(var(--vy-primary));
+}
+.vy-secondary {
+    color: rgb(var(--vy-secondary));
+}
+.vy-gray {
+    color: rgb(var(--vy-gray));
+}
+.vy-selection {
+    color: rgb(var(--vy-selection));
+}
+.vy-good-br {
+    color: rgb(var(--vy-good-br));
+}
+.vy-good-dr {
+    color: rgb(var(--vy-good-dr));
+}
+.vy-link-dr {
+    color: rgb(var(--vy-link-dr));
+}
+.vy-error-dr {
+    color: rgb(var(--vy-error-dr));
+}
+.vy-error-br {
+    color: rgb(var(--vy-error-br));
+}
+.vy-tertiary-br {
+    color: rgb(var(--vy-tertiary-br));
+}
+
+.vy-bg-dark {
+    background-color: rgb(var(--vy-dark));
+}
+.vy-bg-bright {
+    background-color: rgb(var(--vy-bright));
+}
+.vy-bg-primary {
+    background-color: rgb(var(--vy-primary));
+}
+.vy-bg-secondary {
+    background-color: rgb(var(--vy-secondary));
+}
+.vy-bg-gray {
+    background-color: rgb(var(--vy-gray));
+}
+.vy-bg-selection {
+    background-color: rgb(var(--vy-selection));
+}
+.vy-bg-good-br {
+    background-color: rgb(var(--vy-good-br));
+}
+.vy-bg-good-dr {
+    background-color: rgb(var(--vy-good-dr));
+}
+.vy-bg-link-dr {
+    background-color: rgb(var(--vy-link-dr));
+}
+.vy-bg-error-dr {
+    background-color: rgb(var(--vy-error-dr));
+}
+.vy-bg-error-br {
+    background-color: rgb(var(--vy-error-br));
+}
+.vy-bg-tertiary-br {
+    background-color: rgb(var(--vy-tertiary-br));
+}
+
+.vy-border-dark {
+    border-color: rgb(var(--vy-dark)) !important;
+}
+
+.vy-border-error-dr {
+    border-color: rgb(var(--vy-error-dr)) !important;
+}
+
+.vy-border-good-dr {
+    border-color: rgb(var(--vy-good-dr)) !important;
+}
+
+.vy-fill-bright {
+    fill: rgb(var(--vy-bright));
+}
+
+.vy-clickable {
+    width: max-content;
+    border-width: 0px;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.vy-z-over-nav {
+    z-index: 1024;
+}
+
+@keyframes ripple {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+    }
+
+    50% {
+        -webkit-transform:scale(20);
+        -moz-transform: scale(20);
+        -o-transform: scale(20);
+        -ms-transform: scale(20);
+        opacity: 1;
+    }
+    
+    90% {
+        -webkit-transform:scale(20);
+        -moz-transform: scale(20);
+        -o-transform: scale(20);
+        -ms-transform: scale(20);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform:scale(20);
+        -moz-transform: scale(20);
+        -o-transform: scale(20);
+        -ms-transform: scale(20);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    animation-name: ripple;
+    animation-duration: 2.2s;
+}
+
+.vy-ripple-element {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: -2;
+    position: absolute;
+}
+
+.vy-error-btn-anim {
+    background-color: rgb(var(--vy-error-br));
+}
+
+.vy-clickable:hover,
+.vy-clickable:active,
+.vy-clickable:focus-visible {
+    background-color: rgb(var(--vy-selection)) !important;
+    color: rgb(var(--vy-dark)) !important;
+    fill: rgb(var(--vy-dark)) !important;
+}
+
+.vy-wh-min-feedback {
+    min-height: 2rem;
+}
+
+.vy-lone-backdrop {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .vy-lone-backdrop {
+        width: 600px;
+    }
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+
+    color: rgb(240, 240, 240);
+
+    background-color: rgb(var(--vy-site-color));
+}
+
+.vy-flip-horizontally {
+    transform: rotate(180deg);
+}
+
+/* ###################### */
+/* ## Music Filter ## */
+.filter-arrow-size {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.music-filter {
+    width: 265px;
+    height: fit-content;
+    position: static;
+    z-index: 2;
+}
+@media screen and (min-width: 501px) and (max-width: 1200px) {
+    .music-filter {
+        position: absolute;
+        width: 265px;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .music-filter {
+        position: absolute;
+        width: 95%;
+        z-index: 2;
+        left: 50%;
+        transform: translateX(-50%);
+    }  
+}
+
+
+.filter-element {
+    border-bottom: 1px solid rgb(var(--vy-secondary-color));
+}
+
+
+/* ###################### */
+/* ## Card Cover Image ## */
+.vy-backdrop-blur-strong {
+    backdrop-filter: blur(10px);
+}
+
+.vy-music-card-bg-image {
+    background-position: center;
+    background-repeat: initial;
+    background-size: cover;
+    height: 225px;
+}
+
+.vy-music-card-width {
+    width: 340px;
+}
+
+/* .vy-mw-100 {
+    max-width: 100%;
+} */
+
+/* ################ */
+/* ## Music Card ## */
+.h-fs-5 {
+    height: 2.7rem;
+}
+
+.w-fs-5 {
+    width: 2.7rem;
+}
+/* ################ */
+/* ## Approve Window ## */
+.vy-approve-input {
+    height: 6rem;
+}
+
+/* ############ */
+/* ## Header ## */
+header {
+    background-color: black;
+    height: 3.125rem;
+}
+
+.lang-icon-size {
+    height: 40px;
+}
+
+/* ############ */
+/* ## Footer ## */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: black;
+    min-height: 3.125rem;
+}
+
+/* ############ */
+/* ## Navbar ## */
+.vy-nav-area {
+    height: 3rem;
+}
+
+.navbar-nav>.vy-clickable,
+.navbar-nav>.btn-group>.vy-clickable {
+    line-height: 2.5rem;
+}
+
+@media screen and (max-width: 1199px) {
+    .navbar .offcanvas-body .vy-clickable {
+        width: 100%;
+    }
+}
+
+.fs-small {
+    font-size: small;
+}
+
+.vy-black {
+    color: black;
+}
+
+.vy-white {
+    color: rgb(var(--vy-white-color));
+}
+
+.vy-primary {
+    color: rgb(var(--vy-primary-color));
+}
+
+.vy-primary-bg {
+    background-color: rgb(var(--vy-primary-color));
+}
+
+.vy-secondary {
+    color: rgb(var(--vy-secondary-color));
+}
+
+.vy-secondary-bg {
+    background-color: rgb(var(--vy-secondary-color));
+}
+
+.vy-site-bg {
+    background-color: rgb(var(--vy-site-color));
+}
+
+.vy-element-bg {
+    background-color: rgb(var(--vy-element-color));
+}
+
+.vy-selected {
+    background-color: rgb(var(--vy-selection-color));
+}
+
+
+.w-min-50 {
+    min-width: 50%;
+}

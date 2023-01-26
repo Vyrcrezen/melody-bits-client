@@ -1,0 +1,67 @@
+{
+    "lang": "jp",
+    "nav": {
+        "home": "サイト概要",
+        "browse": "音楽一覧",
+        "upload": "アップロード",
+        "approve": " アプルーブ ",
+        "discussions": "ディスカッション",
+        "login": "ログイン",
+
+        "anonUser": {
+            "email": "イーメイル",
+            "password": "パスワード",
+            "login": "ログイン",
+            "register": "登録する"
+        },
+
+        "loggedUser": {
+            "profile": "プロファイル",
+            "submissions": "提供",
+            "messages": "メッセージ",
+            "favorites": "お気に入り",
+            "logout": "ログアウトする"
+        }
+    },
+    "loginForm": {
+        "login": "ログイン",
+        "email": "イーメイル",
+        "password": "パスワード",
+        "loginBtn": "ログイン"
+    },
+    "registerForm": {
+        "username": "ユーザー名",
+        "register": "登録する",
+        "email": "イーメイル",
+        "password": "パスワード",
+        "rePassword": "リピートパスワード",
+        "registerBtn": "登録する"
+    },
+    "profile": {
+        "overview": {
+            "username": "ユーザー名",
+            "email": "イーメイル",
+            "editBtn": "編集する",
+            "id": "ID",
+            "hashId": "ハッシュID",
+            "registrationDate": "登録日",
+            "lastOnline": "最後のオンライン",
+            "clearance": "クリアランスレベル",
+            "comments": "コメント",
+            "uploads": "アップロード",
+            "favorites": "お気に入り",
+            "userBio": "ユーザー略歴"
+        }
+    },
+    "inputFeedback": {
+        "AC_000": "有効なE-メールアドレスを入力してください",
+        "AC_001": "パスワードの長さは8~64文字にする必要があります",
+        "AC_002": "ユーザー名は2~20文字である必要があります",
+        "AC_003": "ユーザー名には文字と数字のみを含める必要があります",
+        "AC_004": "2つのパスワードは一致する必要があります",
+
+        "AC_010": "ログインに成功しました!",
+        "AC_011": "入力フィールドを確認してください",
+        "AC_012": "登録に成功しました。 今すぐログインできます"
+    }
+}

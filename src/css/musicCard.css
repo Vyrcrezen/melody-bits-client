@@ -1,0 +1,71 @@
+.vy-backdrop-blur-strong {
+    backdrop-filter: blur(10px);
+}
+
+.vy-bg-white {
+    background-color: white;
+}
+
+.vy-bg-dark-beige {
+    background-color: rgb(var(--vy-secondary-color));
+}
+
+.vy-mw-100 {
+    max-width: 100%;
+}
+
+.vy-w-80px {
+    width: 80px;
+}
+
+.vy-border-dark-beige {
+    border: 1px solid #bec4a8;;
+}
+
+.vy-fit-contain {
+    object-fit: contain;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+tr td {
+    padding: 0 !important;
+}
+
+.vy-music-card {
+    height: 520px;
+    width: 340px;
+}
+
+.vy-music-card-bg-image {
+    background-position: center;
+    background-repeat: initial;
+    background-size: cover;
+    height: 225px;
+}
+
+.vy-tag-container {
+    height: 72px;
+    overflow: auto;
+}
+
+.vy-tag-text {
+    color: black;
+    text-decoration: none;
+}
+
+.vy-music-card .music-image {
+    border-color: #bec4a8;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+}
+
+.vy-music-card .music-audio {
+    border-color: #bec4a8;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    height: 40px;
+    border-radius: 0 0 5px 5px;
+}

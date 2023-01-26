@@ -1,0 +1,46 @@
+{
+  "name": "web-music-client",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+  },
+  "author": "Vyrcrezen",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "class-validator": "^0.14.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
+    "lottie-colorify": "^0.8.0",
+    "lottie-web": "^5.10.0",
+    "normalize.css": "^8.0.1",
+    "npm": "^9.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
+    "@types/chai": "^4.3.4",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/mocha": "^10.0.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "autoprefixer": "^10.4.13",
+    "chai": "^4.3.7",
+    "css-loader": "^6.7.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mocha": "^10.2.0",
+    "postcss-loader": "^7.0.2",
+    "sinon": "^15.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "lang": "hu",
+    "nav": {
+        "home": "Főmenü",
+        "browse": "Böngészés",
+        "upload": "Feltöltés",
+        "approve": "Jóváhagyás",
+        "discussions": "Fórum",
+        "login": "Bejelentkezés",
+
+        "anonUser": {
+            "email": "E-mail",
+            "password": "Jelszó",
+            "login": "Bejelentkezés",
+            "register": "Regisztrálás"
+        },
+
+        "loggedUser": {
+            "profile": "Profil",
+            "submissions": "Beküldések",
+            "messages": "Üzenetek",
+            "favorites": "Kedvencek",
+            "logout": "Kijelentkezés"
+        }
+    },
+    "loginForm": {
+        "login": "Bejelentkezés",
+        "email": "E-mail cim",
+        "password": "Jelszó",
+        "loginBtn": "Bejelentkezés"
+    },
+    "registerForm": {
+        "username": "Felhasználónév",
+        "register": "Regisztráció",
+        "email": "E-mail cim",
+        "password": "Jelszó",
+        "rePassword": "Jelszó újra",
+        "registerBtn": "Regisztráció"
+    },
+    "inputFeedback": {
+        "AC_000": "Kérem adjon meg egy valós e-mail cimet",
+        "AC_001": "A jelszó 8 és 64 karakter hosszú kell legyen",
+        "AC_002": "A felhasználónév 3 és 20 hosszúság közt kell legyen ",
+        "AC_003": "A felhasználónév csak betűkből és számokból állhat",
+        "AC_004": "A két jelszónak meg kell egyeznie",
+
+        "AC_010": "Sikeres bejeltnkezés!",
+        "AC_011": "Kérem ellenőrizze a beviteli mezőket",
+        "AC_012": "Sikeres regisztráció, most már bejelntkezhet"
+    }
+}

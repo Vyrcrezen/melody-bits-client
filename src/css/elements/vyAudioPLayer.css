@@ -1,0 +1,76 @@
+
+.vy-audio-player {
+    width: 100%;
+    min-height: 30px;
+    background-color: rgb(var(--vy-secondary-color));
+    color: rgb(var(--vy-site-color));
+}
+
+.vy-audio-player .audio-slider {
+    width: inherit;
+}
+
+.vy-audio-player .audio-icon {
+    width: inherit !important;
+}
+
+.vy-audio-player .audio-play-btn,
+.vy-audio-player .audio-mute-btn {
+    position: relative;
+    background-color: inherit;
+    border-width: 0;
+    width: max-content;
+}
+
+.vy-audio-player .audio-mute-btn:hover {
+    /* border-width: 2px 2px 2px 0px;
+    border-color: rgb(var(--vy-site-color));
+    border-style: solid;
+    box-sizing: border-box; */
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0px 0px 2px rgb(var(--vy-site-color));
+    transition-delay: .2s;
+}
+
+.vy-audio-player .audio-mute-btn:hover .volume-slider {
+    visibility: visible;
+    opacity: 1;
+    width: 150px;
+    
+
+    box-shadow: -2px 0px 0px 2px rgb(var(--vy-site-color));
+    /* transition: visibility 0s .3s, padding 0s .3s; */
+    /* transition: all .3s; */
+
+    transition-delay: .2s;
+}
+
+.vy-audio-player .audio-mute-btn .volume-slider {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    width: 0px;
+    right: 100%;
+    background-color: rgb(var(--vy-secondary-color));
+    /* height: calc(100% + 4px); */
+    height: 100%;
+    /* transition: all .3s; */
+
+    transition: all .2s;
+    border-radius: 5px 0 0 5px;
+
+    padding: 0 1rem 0 1rem;
+    
+
+    /* border-width: 2px 0px 2px 2px;
+    border-color: rgb(var(--vy-site-color));
+    border-style: solid; */
+
+    /* box-shadow: -2px 0px 0px 2px rgb(var(--vy-site-color)); */
+
+    /* margin-bottom: -2px;
+    margin-top: -2px; */
+}
+ 
