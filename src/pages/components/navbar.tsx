@@ -42,6 +42,7 @@ export function Navbar() {
                                 <VyAnchorLarge aText={langNav.discussions} href={sitemap.discussions.index} Options={{boldFont: true}} />
                                 {(authData) ? <VyAnchorLarge aText={langNav.upload} href={sitemap.upload} Options={{boldFont: true}} /> : null}
                                 {(authData && (1 <= authData.clearance && authData.clearance <= 2)) ? <VyAnchorLarge aText={langNav.approve} href={sitemap.approve} Options={{boldFont: true}} /> : null}
+                                <VyAnchorLarge aText="Wiki" href="/braun/MelodyBitsWiki.html" Options={{boldFont: true}} />
                             </div>
                         </div>
                     </div>

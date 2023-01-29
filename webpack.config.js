@@ -58,6 +58,11 @@ module.exports = {
                 { from: './src/lang', to: 'lang/' }
             ]
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './src/braun', to: 'braun/' }
+            ]
+        }),
         new HtmlWebpackPlugin({
             title: "Melody Bits",
             inject: true,

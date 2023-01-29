@@ -7,6 +7,7 @@ The client side code of the Melody Bits web application written in TypeScript Re
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Overview](#overview)
+    - [Wiki page](#wiki-page)
     - [Browse Page](#browse-page)
     - [Music Upload Page](#music-upload-page)
     - [User Profile](#user-profile)
@@ -23,13 +24,27 @@ After building the project, the **dist** folder will contain all the project fil
 
 The client side only has static parts, so a dedicated backend solution for serving the files is not necessary. 
 
-In a test environment, the Visual Code module - Live Server - should be enough to serve the static files.
+In a test environment, the Visual Code module - Live Server - should be well suited to serve the static files.
 
 In a production environment, the built project files should be served as static files.
 
 ---
 
 ## Overview
+
+### Wiki page
+
+<img src="./readme_img/mb-Wiki-nav.jpg" height="120">
+
+The site's wiki can be accessed via the **Wiki** link of the navigational bar.
+
+<img src="./readme_img/mb-Wiki-page.jpg" height="500">
+
+The Wiki page offers descriptions on many bands and tags.
+
+The **Melody Bits** item of the navigation menu offers an easy way to the twin site.
+
+---
 
 ### Browse Page
 
