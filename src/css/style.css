@@ -374,3 +374,13 @@ footer {
 .w-min-50 {
     min-width: 50%;
 }
+
+.vy-music-upload-data {
+    width: 26rem;
+}
+
+@media screen and (max-width: 1199px) {
+    .vy-music-upload-data {
+        width: 100%;
+    }
+}

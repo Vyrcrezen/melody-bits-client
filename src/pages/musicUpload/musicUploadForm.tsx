@@ -73,11 +73,11 @@ export function MusicUploadForm() {
     }
 
     return (
-        <div className="container d-flex flex-column mt-4">
+        <div className="container d-flex flex-column mt-4 p-0">
             <div className="m-auto p-4 rounded vy-primary-bg">
             <form ref={formElement} id="music-upload-form" className="d-flex flex-column align-items-center" onSubmit={musicUploadSubmit}>
-                <div className="d-flex flex-row">
-                    <div className="d-flex flex-column justify-content-evenly vy-music-card-width">
+                <div className="row d-flex flex-row">
+                    <div className="col d-flex flex-column justify-content-evenly vy-music-card-width">
                         <VyFeedbackFileInput
                             plusContent={CoverImage({imageId: 'music-upload-cover-image', backgroundId: 'music-upload-cover-bacgkround'})}
                             btnText={musicUploadLang.selectImageBtn} 
@@ -108,7 +108,7 @@ export function MusicUploadForm() {
                             
                         />
                     </div>
-                    <div className="" style={{ width: '26rem' }}>
+                    <div className="col vy-music-upload-data">
                         <VyInputLarge inputLabel={musicUploadLang.title} inputName="title" frameWidthClass="w-100" inputSetter={setTitle} inputValue={title} isRequired={true} validateInput={validateMusicTitle} />
                         <VyInputLarge inputLabel={musicUploadLang.link} inputName="link" frameWidthClass="w-100" inputSetter={setLink} inputValue={link} isRequired={true} validateInput={validateMusicLink} />
                         <VyInputLarge inputLabel={musicUploadLang.artist} inputName="artist_name" frameWidthClass="w-100" inputSetter={setArtist} inputValue={artist} isRequired={true} validateInput={validateMusicArtist} />
