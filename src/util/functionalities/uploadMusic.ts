@@ -5,7 +5,7 @@ interface updateSuccess extends MutationResponseType {
     code: 201;
 };
 
-export function vyUploadMusic({authToken, formElement}: {authToken: string, formElement: React.RefObject<HTMLFormElement>}): Promise<updateSuccess> {
+export function vyUploadMusic({authToken, formElement, postEdit = false, musicId}: {authToken: string, formElement: React.RefObject<HTMLFormElement>, postEdit?: boolean, musicId?: string}): Promise<updateSuccess> {
 
     console.log('Music upload function called...');
 
@@ -18,7 +18,7 @@ export function vyUploadMusic({authToken, formElement}: {authToken: string, form
             console.log('form data');
             console.log(data);
         
-            fetch(`${EnvVariables.serverAddress}/music-data/post-new`, {
+            fetch(`${EnvVariables.serverAddress}/music-data/${postEdit ? `edit/${musicId ?? -1}` : 'post-new'}`, {
                 method: 'post',
                 headers: {
                     "Authorization": `Bearer ${authToken}`

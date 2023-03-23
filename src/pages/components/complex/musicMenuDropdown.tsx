@@ -78,7 +78,7 @@ export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFron
                                 btnText={menuLang.edit}
                                 Options={{ border: false }}
                                 onClick={() => {
-                                    console.log('editing music...');
+                                    window.location.href = `${sitemap.musicEdit}${musicData.id}`;
                                 }}
                             />
                             : undefined

@@ -1,6 +1,5 @@
 import React, { useContext, useReducer, useRef, useState } from "react";
 import { MusicCardData } from "../../models/musicCard";
-import { EnvVariables } from '../../env';
 
 import { MusicFilter } from "./musicFilter";
 import { getAuthData } from "../../util/functionalities/opAuthData";

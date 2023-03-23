@@ -10,9 +10,9 @@ export function Footer() {
                     <br />
                     <a className="vy-bright" href="/about">Contact</a>
                     <br />
-                    <a className="vy-bright" href="/about">Privacy Policy</a>
+                    <a className="vy-bright" href="/privacy-policy">Privacy Policy</a>
                     <br />
-                    <a className="vy-bright" href="/about">Terms and Rules</a>
+                    <a className="vy-bright" href="/terms-and-rules">Terms and Rules</a>
                 </div>
 
                 <div className="d-flex flex-column order-md-1 mb-2">
@@ -24,7 +24,7 @@ export function Footer() {
                     <div className="fs-7 mt-2 fs-small">
                         Designed and developed by:
                         <br />
-                        <a className="vy-bright" href="#">Vyrcrezen</a> 
+                        <a className="vy-bright" target="_blank" href="https://github.com/Vyrcrezen">Vyrcrezen</a> 
                     </div>
                 </div>
             </div>

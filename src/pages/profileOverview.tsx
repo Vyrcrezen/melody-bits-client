@@ -8,7 +8,7 @@ import 'normalize.css';
 import '../css/style.css';
 
 import { divToBody } from "../util/divToBody";
-import { Navbar } from "./components/navbar";
+import { Navbar } from "./components/navbar/navbar";
 import { HeroTitle } from "./components/heroTitle";
 import { defaultLangData, LangDataContext } from "./components/context/langContext";
 import { Header } from "./components/header";

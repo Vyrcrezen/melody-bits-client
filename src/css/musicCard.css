@@ -49,6 +49,9 @@ tr td {
 .vy-tag-container {
     height: 72px;
     overflow: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgb(46, 62, 70);
 }
 
 .vy-tag-text {

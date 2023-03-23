@@ -43,17 +43,30 @@ export function getLangData(lang: string) {
     })
 }
 
-export function conditionallyUpdateLangData(currentLangData: typeof defaultLangData, lang: string, setLangData: React.Dispatch<React.SetStateAction<typeof defaultLangData>>) {
+export function conditionallyUpdateLangData(
+  currentLangData: typeof defaultLangData,
+  lang: string,
+  setLangData: React.Dispatch<React.SetStateAction<typeof defaultLangData>>
+) {
+  if (currentLangData.lang !== lang) {
+    setLangSetting(lang);
 
-    if (currentLangData.lang !== lang) {
-        setLangSetting(lang);
+    getLangData(lang)
+      .then((data) => {
+        setLangData(data);
+      })
+      .catch((err) => {});
+  }
+}
 
-        getLangData(lang)
-        .then((data) => {
-            setLangData(data);
-        })
-        .catch(err => {})
-    }
+export function ehUpdateLangData(
+    currentLangData: typeof defaultLangData,
+    lang: string,
+    setLangData: React.Dispatch<React.SetStateAction<typeof defaultLangData>>
+) {
+   return () => {
+       conditionallyUpdateLangData(currentLangData, lang, setLangData); 
+   }
 }
 
 export function initLangFromStorage(langData: typeof defaultLangData, setLangData: React.Dispatch<React.SetStateAction<typeof defaultLangData>>) {

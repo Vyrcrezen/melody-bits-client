@@ -22,11 +22,11 @@ $ npm run build
 
 After building the project, the **dist** folder will contain all the project files ready to use.
 
-The client side only has static parts, so a dedicated backend solution for serving the files is not necessary. 
+Ideally, the client side files are served by a content server.
 
 In a test environment, the Visual Code module - Live Server - should be well suited to serve the static files.
 
-In a production environment, the built project files should be served as static files.
+In a production environment, the built project files should be served as static files by a content server.
 
 ---
 

@@ -35,7 +35,7 @@ export function VyAudio({ id, src, onEnded }: { id?: string, src?: string, onEnd
     const VolumeSlider = useRef(new cVySlider({
         dragDefaultHidden: true, showCurrentValue: false,
         values: [0, 100],
-        zIndexRoot: 10,
+        zIndexRoot: 11,
         startingWidth: {
             value: 100,
             isPercentage: true
@@ -219,7 +219,7 @@ export function VyAudio({ id, src, onEnded }: { id?: string, src?: string, onEnd
                 <PlaySlider.current.GetSlider />
             </div>
             <button type="button" ref={elAudioMuteBtn} className="audio-mute-btn h-100 py-0" >
-                <div className="align-items-center volume-slider">
+                <div className="align-items-center volume-slider vy-z-10">
                     <VolumeSlider.current.GetSlider />
                 </div>
             </button>

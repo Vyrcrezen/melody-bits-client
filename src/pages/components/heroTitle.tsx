@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 export function HeroTitle() {
     const containerStyle: React.CSSProperties = {

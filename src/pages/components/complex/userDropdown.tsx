@@ -21,7 +21,7 @@ export function UserDropdown() {
             <div className="vy-bg-secondary rounded">
                 <div className="pe-5">
                     <VyAnchorLarge aText={langLogged.profile} href={`${sitemap.profile.overview}${user_id}`} />
-                    <VyAnchorLarge aText={langLogged.submissions} href="#" />
+                    <VyAnchorLarge aText={langLogged.submissions} href={`${sitemap.profile.submissions}${user_id}`} />
                     <VyAnchorLarge aText={langLogged.messages} href="#" />
                     <VyAnchorLarge aText={langLogged.favorites} href="#" />
                 </div>

@@ -15,6 +15,12 @@ const reroutTraffic = () => {
     if (pageAddress.includes('profile-')) {
         scriptedContent.setAttribute('src', '/profileOverviewPage.js');
     }
+    else if (pageAddress.includes('submissions-')) {
+        scriptedContent.setAttribute('src', '/profileSubmissionsPage.js');
+    }
+    else if(pageAddress.includes('music-edit-')) {
+        scriptedContent.setAttribute('src', '/musicEditPage.js');
+    }
     else {
         switch (pageAddress) {
             case 'index': scriptedContent.setAttribute('src', '/indexpage.js');
@@ -30,6 +36,10 @@ const reroutTraffic = () => {
             case 'register': scriptedContent.setAttribute('src', '/RegisterPage.js');
             break;
             case 'music-upload': scriptedContent.setAttribute('src', '/musicUploadPage.js');
+            break;
+            case 'privacy-policy': scriptedContent.setAttribute('src', '/privacyPolicyPage.js');
+            break;
+            case 'terms-and-rules': scriptedContent.setAttribute('src', '/termsAndRulesPage.js');
             break;
             default: scriptedContent.setAttribute('src', '/notFound.js');
         }

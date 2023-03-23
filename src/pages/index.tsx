@@ -1,23 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import { divToBody } from "../util/divToBody";
-import { HeroTitle } from "./components/heroTitle";
-import { Navbar } from "./components/navbar";
+import { initLangFromStorage } from "../util/functionalities/opLang";
 
+import { HeroTitle } from "./components/heroTitle";
+import { Navbar } from "./components/navbar/navbar";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { IndexCarousel } from "./index/carousel";
+import { IndexHighlights } from "./index/IndexHighlights";
+import { IndexChangelog } from "./index/IndexChangelog";
+import { IndexLatestAdditions } from "./index/IndexLatestAdditions";
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import 'normalize.css';
 
 import '../css/style.css';
+import '../css/musicCard.css'
 import { defaultLangData, LangDataContext } from "./components/context/langContext";
 
 function IndexSection() {
     const [langData, setLangData] = useState(defaultLangData);
+
+    useEffect(() => initLangFromStorage(langData, setLangData));
 
     return (
         <LangDataContext.Provider value={langData}>
@@ -26,7 +33,9 @@ function IndexSection() {
                 <Header setLangData={setLangData} />
                 <HeroTitle />
                 <Navbar />
-                <IndexCarousel />
+                <IndexHighlights />
+                <IndexChangelog />
+                <IndexLatestAdditions />
             </div>
             <Footer />
         </div>

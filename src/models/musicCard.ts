@@ -25,3 +25,11 @@ export interface MusicCardData {
 
     is_favorite: boolean;  
 }
+
+export interface ApprovalMusicCardData extends MusicCardData {
+  approval: {
+    approval_time: string;
+    message: string;
+    status: string;
+  };
+}

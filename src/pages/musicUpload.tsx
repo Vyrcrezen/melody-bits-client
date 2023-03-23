@@ -2,7 +2,7 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { divToBody } from "../util/divToBody";
 import { HeroTitle } from "./components/heroTitle";
-import { Navbar } from "./components/navbar";
+import { Navbar } from "./components/navbar/navbar";
 import { MusicUploadForm } from "./musicUpload/musicUploadForm";
 
 import 'bootstrap/dist/css/bootstrap.css';

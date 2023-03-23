@@ -9,9 +9,9 @@ import _ from "lodash";
 import { defaultLangData, LangDataContext } from "../components/context/langContext";
 import { vyRegister } from "../../util/functionalities/register";
 import { resolveFeedbackMessage, unpackValidationError } from "../../util/validate/unpackValidationError";
-import { VyInputLarge } from "../components/base/vyTextInput";
+import { VyCheckboxInput, VyInputLarge } from "../components/base/vyTextInput";
 import { VyFeedbackBtn } from "../components/base/vyFeedbackElements";
-import { validateUsername, validateUserEmail, validateUserPassword, validateUserRePassword } from "../../util/validate/userInfo";
+import { validateUsername, validateUserEmail, validateUserPassword, validateUserRePassword, validateCheckboxChecked } from "../../util/validate/userInfo";
 import { sitemap } from "../../sitemap";
 import { ValidationError } from "class-validator";
 
@@ -22,6 +22,7 @@ export function RegisterForm() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [rePassword, setRePassword] = useState<string>('');
+    const [termsAccept, setTermsAccept] = useState<string>('');
     const [inputResult, setInputResult] = useState<{ isError: boolean, message: string }>();
 
     const flashEmail = getFlashEmail();
@@ -52,6 +53,12 @@ export function RegisterForm() {
         }
     }
 
+    const termsAcceptText = (
+        <span>
+            I've read and agree to the <a className="vy-link-dr" target='_blank' href={sitemap.privacyPolicy}>Privacy Policy</a> and the <a className="vy-link-dr" target='_blank' href={sitemap.termsAndRules}>Terms and Rules</a>
+        </span>
+    );
+
     return (
 
         <div className="container d-flex flex-column mt-4">
@@ -62,13 +69,15 @@ export function RegisterForm() {
                         <VyInputLarge inputLabel={langRegister.email} inputName="email" frameWidthClass="w-100" inputSetter={setEmail} inputValue={( flashEmail ? flashEmail.email : email )} isRequired={true} validateInput={validateUserEmail} />
                         <VyInputLarge inputLabel={langRegister.password} inputName="password" frameWidthClass="w-100" inputSetter={setPassword} inputValue={password} isRequired={true} validateInput={validateUserPassword} />
                         <VyInputLarge inputLabel={langRegister.rePassword} inputName="re-password" frameWidthClass="w-100" inputSetter={setRePassword} inputValue={rePassword} isRequired={true} validateInput={(inputRePswd) => validateUserRePassword(password, inputRePswd)} />
+                        <VyCheckboxInput inputLabel={termsAcceptText} inputName="terms-accept" frameWidthClass="w-100" inputSetter={setTermsAccept} inputValue={termsAccept} isRequired={true} validateInput={(termsAccept) => validateCheckboxChecked(termsAccept)} />
                         <VyFeedbackBtn btnText={langRegister.registerBtn} frameOptions={{ message: inputResult?.message, isError: inputResult?.isError, moreClasses: 'w-100'}} onClick={() => {
                             
                             const validationResults: Array<Promise<ValidationError[]>> = [
                                 validateUsername(username),
                                 validateUserEmail(email),
                                 validateUserPassword(password),
-                                validateUserRePassword(password, rePassword)
+                                validateUserRePassword(password, rePassword),
+                                validateCheckboxChecked(termsAccept)
                             ];
         
                             Promise.all(validationResults)

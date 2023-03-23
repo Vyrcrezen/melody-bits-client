@@ -53,3 +53,21 @@ export async function validateUserBio(bio: string) {
 
   return validationResult;
 }
+
+export async function validateCheckboxChecked(
+  checkboxValue: string
+) {
+  const validationResult: ValidationError[] = [];
+
+  if (checkboxValue !== 'true') {
+    validationResult.push({
+      children: [],
+      property: "terms_accepted",
+      value: checkboxValue,
+      constraints: {
+        equals: "AC_006;You need to accept the Privacy Policy and the Terms and Rules to register.",
+      },
+    });
+  }
+  return validationResult;
+}

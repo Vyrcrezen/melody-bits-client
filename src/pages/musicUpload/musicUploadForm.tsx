@@ -22,8 +22,9 @@ import { unpackValidationError, resolveFeedbackMessage } from "../../util/valida
 import { vyUploadMusic } from "../../util/functionalities/uploadMusic";
 import { getAuthData } from "../../util/functionalities/opAuthData";
 import { sitemap } from "../../sitemap";
+import { MusicCardData } from "../../models/musicCard";
 
-export function MusicUploadForm() {
+export function MusicUploadForm({ musicData, isEditing=false }: { musicData?: MusicCardData, isEditing?: boolean }) {
 
     const [title, setTitle] = useState('');
     const [link, setLink] = useState('');
@@ -35,13 +36,26 @@ export function MusicUploadForm() {
     const [image, setImage] = useState('');
     const [music, setMusic] = useState(placeholderMusic);
 
-    let uploadingNow = false;
+    const [uploadingNow, setUploadingNow] = useState(false);
+
+    const [readValuesFromArg, setReadValuesFromArg] = useState(false);
+
+    if (musicData && !readValuesFromArg) {
+        setTitle(musicData?.title ?? '');
+        setLink(musicData?.link ?? '');
+        setArtist(musicData?.artist?.name ?? '');
+        setTags(musicData?.tags ? musicData?.tags.map(item => item.name).join(';') : '');
+        setAlbum(musicData?.album ?? '');
+        setRecordLabel(musicData?.record_label?.name ?? '');
+        setPublisher(musicData?.publisher?.name ?? '');
+        setReadValuesFromArg(true);
+    }
 
     const [inputResult, setInputResult] = useState<{ isError: boolean, message: string }>();
 
     const formElement = useRef<HTMLFormElement>(null);
 
-    const { musicUploadForm: musicUploadLang, inputFeedback: langInputFeedback } = _.merge({}, defaultLangData, useContext(LangDataContext));
+    const { musicUploadForm: musicUploadLang, inputFeedback: langInputFeedback, legal: legalLang } = _.merge({}, defaultLangData, useContext(LangDataContext));
 
     const musicUploadSubmit = (event: FormEvent) => {
         event.preventDefault();
@@ -49,22 +63,28 @@ export function MusicUploadForm() {
         const { token: vyAuthToken } = getAuthData() || {};
 
         if (!vyAuthToken) {
+            setUploadingNow(false);
             return;
         }
 
-        vyUploadMusic({ authToken: vyAuthToken, formElement: formElement})
+        if (isEditing && !musicData) {
+            setUploadingNow(false);
+            return;
+        }
+
+        vyUploadMusic({ authToken: vyAuthToken, formElement: formElement, postEdit: isEditing, musicId: musicData?.id ? `${musicData.id}` : undefined})
         .then((result) => {
             setInputResult({
                 isError: false,
                 message: resolveFeedbackMessage('MD_20;Music upload successful!', langInputFeedback)
             });
             setTimeout(() => {
-                uploadingNow = false;
+                // setUploadingNow(false);
                 window.location.href = sitemap.upload;
             }, 1000);
         })
         .catch((err: GraphqlRes) => {
-            uploadingNow = false;
+            setUploadingNow(false);
             setInputResult({
                 isError: true,
                 message: err.message
@@ -72,29 +92,43 @@ export function MusicUploadForm() {
         });
     }
 
+    const imageSrc = musicData ? `${EnvVariables.serverAddress}/music-data/cover-image/${musicData.id}` : undefined;
+    const audioSrc = musicData ? `${EnvVariables.serverAddress}/music-data/music-file/${musicData.id}` : undefined;
+
+    console.log(`Uploading now: ${uploadingNow}`);
+
     return (
         <div className="container d-flex flex-column mt-4 p-0">
+            <div className="-bg mb-4 p-1 text-center">
+                <p className="vy-bg-primary m-auto rounded p-2 vy-info-width">
+                <span className="mb-2">{legalLang.musicUploadCopyright}</span>
+                <br />
+                <br />
+                <span className="">{legalLang.musicUploadLink}</span>
+                </p>
+            </div>
             <div className="m-auto p-4 rounded vy-primary-bg">
-            <form ref={formElement} id="music-upload-form" className="d-flex flex-column align-items-center" onSubmit={musicUploadSubmit}>
-                <div className="row d-flex flex-row">
-                    <div className="col d-flex flex-column justify-content-evenly vy-music-card-width">
-                        <VyFeedbackFileInput
-                            plusContent={CoverImage({imageId: 'music-upload-cover-image', backgroundId: 'music-upload-cover-bacgkround'})}
-                            btnText={musicUploadLang.selectImageBtn} 
-                            inputId="music-upload-cover-input"
-                            inputName="cover_image"
-                            inputOptions={{
-                                validateInput: validateMusicImage,
-                                inputSetter: setImage,
-                                inputOnChange: (_event) => {
-                                    loadFileToElement('music-upload-cover-input', 'music-upload-cover-image', () => {return true});
-                                    loadFileAsBackground('music-upload-cover-input', 'music-upload-cover-bacgkround', () => {return true});
-                                }
-                            }}
-                        />
-                        <hr />
-                        <VyFeedbackFileInput
-                            plusContent={VyAudio({ id: "music-upload-music-audio" })}
+
+                <form ref={formElement} id="music-upload-form" className="d-flex flex-column align-items-center" onSubmit={musicUploadSubmit}>
+                    <div className="row d-flex flex-row">
+                        <div className="col d-flex flex-column justify-content-evenly vy-music-card-width">
+                            <VyFeedbackFileInput
+                                plusContent={CoverImage({ imageSrc: imageSrc, imageId: 'music-upload-cover-image', backgroundId: 'music-upload-cover-bacgkround' })}
+                                btnText={musicUploadLang.selectImageBtn}
+                                inputId="music-upload-cover-input"
+                                inputName="cover_image"
+                                inputOptions={{
+                                    validateInput: validateMusicImage,
+                                    inputSetter: setImage,
+                                    inputOnChange: (_event) => {
+                                        loadFileToElement('music-upload-cover-input', 'music-upload-cover-image', () => { return true });
+                                        loadFileAsBackground('music-upload-cover-input', 'music-upload-cover-bacgkround', () => { return true });
+                                    }
+                                }}
+                            />
+                            <hr />
+                            <VyFeedbackFileInput
+                                plusContent={VyAudio({ src: audioSrc, id: "music-upload-music-audio" })}
                             btnText={musicUploadLang.selectMusicBtn} 
                             inputId="music-upload-music-input"
                             inputName="music_file"
@@ -119,11 +153,11 @@ export function MusicUploadForm() {
                     </div>
                 </div>
                 <hr className="w-100" />
-                <VyFeedbackBtnLarge btnText={musicUploadLang.uploadMusicBtn} frameOptions={{ message: inputResult?.message, isError: inputResult?.isError, moreClasses: 'w-100'}} onClick={() => {
+                <VyFeedbackBtnLarge btnText={isEditing ? musicUploadLang.editMusicBtn : musicUploadLang.uploadMusicBtn} btnOptions={{ isDisabled: uploadingNow }} frameOptions={{ message: inputResult?.message, isError: inputResult?.isError, moreClasses: 'w-100'}} onClick={() => {
 
                     if (!uploadingNow) {
 
-                        uploadingNow = true;
+                        setUploadingNow(true);
 
                         const validationResults: Array<Promise<ValidationError[]>> = [
                             validateMusicTitle(title),

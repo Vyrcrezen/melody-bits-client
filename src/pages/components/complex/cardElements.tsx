@@ -123,13 +123,13 @@ export function MusicCardDetails({ musicData, musicCardLang, numPostfixes }: { m
         return (
             <tr>
                 <td className="fs-small vy-w-80px">{text}:</td>
-                <td className="text-start">{value}</td>
+                <td className="text-start text-break">{value}</td>
             </tr>
         );
     }
 
     return (
-        <div className="h-100 pe-2">
+        <div className="h-100 pe-2 vy-verflow-vertical">
         <table className="table table-sm m-1 ps-2 h-100 vy-white">
             <tbody>
                 <DataTableRow text={musicCardLang.uploader} value={musicData.uploader.user_name} />

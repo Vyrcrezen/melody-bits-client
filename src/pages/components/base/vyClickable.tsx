@@ -83,6 +83,8 @@ export interface ButtonOptions extends ClickableOptions {
     ariaExpanded?: boolean;
     dataBsAutoClose?: string;
     buttonRef?: React.RefObject<HTMLButtonElement>;
+    isDisabled?: boolean;
+    isNoninteractable?: boolean;
 }
 
 export class VyButtonClass {
@@ -96,17 +98,18 @@ export class VyButtonClass {
         this.onClick = onClick;
         this.Options = Options;
 
-        const {boldFont, backgroundColor, color, border, moreClassNames, padding} = this.Options ?? {};
+        const {boldFont, backgroundColor, color, border, moreClassNames, padding, isNoninteractable} = this.Options ?? {};
 
-        this.className = `btn ${padding ? padding : 'py-1'} rounded vy-clickable ${boldFont ? 'fw-bold' : ''} ${backgroundColor ? backgroundColor : 'vy-bg-secondary'} ${color ? color : 'vy-dark'} ${border === false ? '' : 'border border-2 vy-border-dark'} ${moreClassNames ?? ''}`;
+        this.className = `${padding ? padding : 'py-1'} rounded ${ isNoninteractable ? 'vy-btn-intert' : 'btn vy-clickable' } ${boldFont ? 'fw-bold' : ''} ${backgroundColor ? backgroundColor : 'vy-bg-secondary'} ${color ? color : 'vy-dark'} ${border === false ? '' : 'border border-2 vy-border-dark'} ${moreClassNames ?? ''}`;
     }
 
     getButtonElement() {
-        const {dataBsToggle, ariaExpanded, dataBsAutoClose, buttonRef, elementKey} = this.Options || {};
+        const {dataBsToggle, ariaExpanded, dataBsAutoClose, buttonRef, elementKey, isDisabled} = this.Options || {};
 
         return (
             <button
                 type="button"
+                disabled={isDisabled ?? undefined}
                 key={elementKey ?? null}
                 ref={buttonRef ?? null}
                 className={this.className}

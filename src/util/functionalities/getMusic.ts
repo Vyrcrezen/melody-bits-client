@@ -11,6 +11,7 @@ export type ColumnOrderNameType =
 export type ColumnOrderDirectionType = "ASC" | "DESC";
 
 export interface MusicRequestOptions {
+  musicId?: string;
   musicTitle?: string;
   artistName?: string;
   recordLabelName?: string;
@@ -20,6 +21,7 @@ export interface MusicRequestOptions {
     values?: { id?: string; name?: string }[];
     Options?: { relAnd: boolean };
   };
+  limit?: number;
   uploadDateMin?: string;
   uploadDateMax?: string;
   playedMin?: number;
@@ -39,6 +41,9 @@ export function getMusic({
   Options?: MusicRequestOptions;
 }): Promise<MusicDataResponseType> {
   let musicFilters: string[] = [];
+  if (Options?.musicId) {
+    musicFilters.push(`musicId: "${Options.musicId}"`);
+  }
   if (Options?.musicTitle) {
     musicFilters.push(`musicTitle: "${Options.musicTitle}"`);
   }
@@ -66,6 +71,9 @@ export function getMusic({
   if (Options?.playedMax) {
     musicFilters.push(`playedMax: "${Options.playedMax}"`);
   }
+  if (Options?.limit) {
+    musicFilters.push(`limit: ${Options.limit}`);
+  }
   if (Options?.isFavorite) {
     musicFilters.push(`isFavorite: "${Options.isFavorite}"`);
   }
@@ -78,6 +86,7 @@ export function getMusic({
   if (Options?.orderByDirection) {
     musicFilters.push(`orderByDirection: "${Options.orderByDirection}"`);
   }
+
   if (Options?.pageNum) {
     musicFilters.push(`pageNum: ${Options.pageNum}`);
   }

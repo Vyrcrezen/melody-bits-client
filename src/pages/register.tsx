@@ -9,7 +9,7 @@ import '../css/style.css';
 
 import { divToBody } from "../util/divToBody";
 import { RegisterForm } from "./register/registerForm";
-import { Navbar } from "./components/navbar";
+import { Navbar } from "./components/navbar/navbar";
 import { HeroTitle } from "./components/heroTitle";
 import { defaultLangData, LangDataContext } from "./components/context/langContext";
 import { initLangFromStorage } from "../util/functionalities/opLang";

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { divToBody } from "../util/divToBody";
 
 import { PendingMusicList } from "./musicApprove/pendingMusicList";
-import { Navbar } from "./components/navbar";
+import { Navbar } from "./components/navbar/navbar";
 import { HeroTitle } from "./components/heroTitle";
 
 import 'bootstrap/dist/css/bootstrap.css';

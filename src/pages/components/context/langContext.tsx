@@ -14,6 +14,7 @@ export const defaultLangData = {
         "upload": "Upload",
         "approve": "Approve",
         "discussions": "Discussions",
+        "character": "Character",
         "login": "Login",
 
         "anonUser": {
@@ -55,7 +56,8 @@ export const defaultLangData = {
         "album": "Album",
         "recordLabel": "Record Label",
         "publisher": "Publisher",
-        "uploadMusicBtn": "Uploac Music"
+        "uploadMusicBtn": "Upload Music",
+        "editMusicBtn": "Save Changes"
     },
     "musicCard": {
         "menu": {
@@ -122,6 +124,15 @@ export const defaultLangData = {
             "uploads": "Uploads",
             "favorites": "Favorites",
             "userBio": "User bio"
+        },
+        "submissions": {
+            "resolution": "Resolution",
+            "approved": "Approved",
+            "submitted": "Submitted",
+            "revisionNeeded": "Revision Needed",
+            "terminated": "Terminated",
+            "revise": "Revise",
+            "message": "Message"
         }
     },
     "inputFeedback": {
@@ -131,6 +142,7 @@ export const defaultLangData = {
         "AC_003": "Username must contain only letters and numbers",
         "AC_004": "The two passwords must match",
         "AC_005": "Bio text must be between 2 and 1200 characters long.",
+        "AC_006": "You need to accept the Privacy Policy and the Terms and Rules to register.",
 
         "AC_010": "Login successful!",
         "AC_011": "Please verify the input fields",
@@ -143,7 +155,7 @@ export const defaultLangData = {
         "MD_005": "Record Label name must be between 2 and 128 characters long.",
         "MD_006": "Publisher name must be between 2 and 128 characters long.",
         "MD_007": "Each tag must be between 2 and 20 characters long.",
-        "MD_008": "Please provide at least 2 tags - separated by semicolon ( ; ) - that you think describe this music well.",
+        "MD_008": "Please provide at least 2 tags - separated by semicolon ( ; ) - that describes this music well.",
         "MD_009": "Image must be in jpg, png or webp format.",
         "MD_010": "Music must be in mp3 format.",
 
@@ -152,6 +164,11 @@ export const defaultLangData = {
         "MD_033": "Music rating successfully added!",
         "MD_034": "Music rating successfully updated!",
         "MD_035": "Music rating successfully removed!"
+    },
+    "legal": {
+        "musicUploadCopyright": "We only accept content that has been licensed under a creative commons license or a similar license that allows for free use and distribution as long as proper credit is given to the original creators.",
+        "musicUploadCopyrightLong": "At Melody Bits, we highly value and respect the importance of copyright laws. We only accept content that has been licensed under a creative commons license or a similar license that allows for free use and distribution as long as proper credit is given to the original creators. This helps us ensure that the content we share is legally sound and aligns with our commitment to promoting creative works in a responsible manner.",
+        "musicUploadLink": "Please make sure that the source you provide via the link clearly states the above for the content."
     }
 }
 

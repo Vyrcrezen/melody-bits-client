@@ -1,4 +1,4 @@
-import { MusicCardData } from "../../models/musicCard";
+import { ApprovalMusicCardData, MusicCardData } from "../../models/musicCard";
 
 export interface UserLoginType {
   code: number;
@@ -54,6 +54,23 @@ export interface MusicDataResponseType {
   data?: {
     paginationData: MusicPaginationType,
     musicData: MusicCardData[]
+  };
+  validationError?: {
+    target: string,
+    path: string,
+    value: string,
+    message: string,
+    messageCode: string
+  }[]
+}
+
+export interface ApprovalMusicDataResponseType {
+  code: number;
+  message: string;
+  messageCode: string;
+  data?: {
+    paginationData: MusicPaginationType,
+    musicData: ApprovalMusicCardData[]
   };
   validationError?: {
     target: string,
