@@ -1,6 +1,6 @@
 import { EnvVariables } from "../../env";
 import { MusicCardData } from "../../models/musicCard";
-import { MusicDataResponseType, MutationResponseType } from "../../pages/login/reqSuccessTypes";
+import { MusicDataResponseType, MutationResponseType } from "../../models/reqSuccessTypes";
 
 
 export function getNotApprovedMusic({authToken, musicId, status}: {authToken?: string, musicId: number, status: number[]}): Promise<MusicDataResponseType> {

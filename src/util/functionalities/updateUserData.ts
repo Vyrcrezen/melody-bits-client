@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { MutationResponseType } from "../../pages/login/reqSuccessTypes";
+import { MutationResponseType } from "../../models/reqSuccessTypes";
 
 interface updateSuccess extends MutationResponseType {
     code: 201;

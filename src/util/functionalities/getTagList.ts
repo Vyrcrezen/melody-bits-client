@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { ResTagList } from "../../pages/login/reqSuccessTypes";
+import { ResTagList } from "../../models/reqSuccessTypes";
 
 interface reqSuccessTagList extends ResTagList {
     code: 200;

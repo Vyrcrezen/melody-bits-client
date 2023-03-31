@@ -8,13 +8,13 @@ import 'normalize.css';
 import '../css/style.css';
 
 import { divToBody } from "../util/divToBody";
-import { RegisterForm } from "./register/registerForm";
-import { Navbar } from "./components/navbar/navbar";
-import { HeroTitle } from "./components/heroTitle";
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
+import { RegisterForm } from "../components/auth/container/registerForm";
+import { Navbar } from "../components/navigation/container/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
+import { defaultLangData, LangDataContext } from "../context/langContext";
 import { initLangFromStorage } from "../util/functionalities/opLang";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
 
 function RegisterSection() {
     const [langData, setLangData] = useState(defaultLangData);

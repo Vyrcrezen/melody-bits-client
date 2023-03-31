@@ -21,6 +21,9 @@ const reroutTraffic = () => {
     else if(pageAddress.includes('music-edit-')) {
         scriptedContent.setAttribute('src', '/musicEditPage.js');
     }
+    else if(pageAddress.includes('music-browser')) {
+        scriptedContent.setAttribute('src', '/musicBrowserPage.js')
+    }
     else {
         switch (pageAddress) {
             case 'index': scriptedContent.setAttribute('src', '/indexpage.js');
@@ -29,8 +32,8 @@ const reroutTraffic = () => {
             break;
             case 'login': scriptedContent.setAttribute('src', '/loginPage.js');
             break;
-            case 'music-browser': scriptedContent.setAttribute('src', '/musicBrowserPage.js');
-            break;
+            // case 'music-browser': scriptedContent.setAttribute('src', '/musicBrowserPage.js');
+            // break;
             case 'music-approve': scriptedContent.setAttribute('src', '/musicApprovePage.js');
             break;
             case 'register': scriptedContent.setAttribute('src', '/RegisterPage.js');

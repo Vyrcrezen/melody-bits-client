@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { PublicUserDataType } from "../../pages/login/reqSuccessTypes";
+import { PublicUserDataType } from "../../models/reqSuccessTypes";
 
 export interface ProfileData {
     username: string;

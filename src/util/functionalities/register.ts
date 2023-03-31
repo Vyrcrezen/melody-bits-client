@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { UserRegisterType } from "../../pages/login/reqSuccessTypes";
+import { UserRegisterType } from "../../models/reqSuccessTypes";
 
 interface registerSuccess extends UserRegisterType {
     code: 201;

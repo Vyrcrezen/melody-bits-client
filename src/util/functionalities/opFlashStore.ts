@@ -1,3 +1,4 @@
+import { NameTable } from "../../models/musicCard";
 
 function _getFlashData() {
     try {
@@ -29,4 +30,16 @@ export function setFlashEmail(email: string, error?: string) {
         email: email,
         error: error
     }))
+}
+
+export function getFlashTagList() {
+    const flashData = _getFlashData();
+
+    if (typeof flashData === 'object') {
+        return flashData;
+    }
+}
+
+export function setTagFlashTagList(tagList: NameTable[]) {
+    localStorage.setItem('vy-flash', JSON.stringify(tagList));
 }

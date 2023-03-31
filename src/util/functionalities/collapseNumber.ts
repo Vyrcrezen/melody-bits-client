@@ -1,4 +1,4 @@
-import { defaultLangData } from "../../pages/components/context/langContext";
+import { defaultLangData } from "../../context/langContext";
 
 export function collapseNumber(numValue: number, numPostfixes: typeof defaultLangData.numPostfix) {
     if (numValue > 1000000) {

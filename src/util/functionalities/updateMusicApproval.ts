@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { MutationResponseType } from "../../pages/login/reqSuccessTypes";
+import { MutationResponseType } from "../../models/reqSuccessTypes";
 
 type ApprovalStatusType = 'ok' | 'approve' | 'revision' | 'terminate';
 

@@ -8,12 +8,12 @@ import 'normalize.css';
 import '../css/style.css';
 
 import { divToBody } from "../util/divToBody";
-import { LoginForm } from "./login/loginForm";
-import { Navbar } from "./components/navbar/navbar";
-import { HeroTitle } from "./components/heroTitle";
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
+import { LoginForm } from "../components/form/container/loginForm";
+import { Navbar } from "../components/navigation/container/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
+import { defaultLangData, LangDataContext } from "../context/langContext";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
 import { initLangFromStorage } from "../util/functionalities/opLang";
 
 function LoginSection() {

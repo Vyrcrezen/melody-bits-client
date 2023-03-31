@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { divToBody } from "../util/divToBody";
 
-import { PendingMusicList } from "./musicApprove/pendingMusicList";
-import { Navbar } from "./components/navbar/navbar";
-import { HeroTitle } from "./components/heroTitle";
+import { PendingMusicList } from "../components/section/container/pendingMusicList";
+import { Navbar } from "../components/navigation/container/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
@@ -12,10 +12,10 @@ import 'normalize.css';
 
 import '../css/style.css';
 import '../css/musicCard.css'
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
+import { defaultLangData, LangDataContext } from "../context/langContext";
 import { initLangFromStorage } from "../util/functionalities/opLang";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
 
 function MusicApprove() {
     const [langData, setLangData] = useState(defaultLangData);

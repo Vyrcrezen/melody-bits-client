@@ -1,6 +1,6 @@
 import { EnvVariables } from "../../env";
 import { MusicCardData } from "../../models/musicCard";
-import { MusicDataResponseType } from "../../pages/login/reqSuccessTypes";
+import { MusicDataResponseType } from "../../models/reqSuccessTypes";
 
 export type ColumnOrderNameType =
   | "title"
@@ -18,7 +18,7 @@ export interface MusicRequestOptions {
   publisherName?: string;
   uploaderName?: string;
   tags?: {
-    values?: { id?: string; name?: string }[];
+    values?: { id: number; name: string }[];
     Options?: { relAnd: boolean };
   };
   limit?: number;

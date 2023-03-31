@@ -1,4 +1,4 @@
-import { defaultLangData } from "../../pages/components/context/langContext";
+import { defaultLangData } from "../../context/langContext";
 
 function _getPrefData() {
     try {

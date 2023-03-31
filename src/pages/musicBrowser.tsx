@@ -9,13 +9,13 @@ import '../css/style.css';
 import '../css/musicCard.css'
 
 import { divToBody } from "../util/divToBody";
-import { Navbar } from "./components/navbar/navbar";
-import { HeroTitle } from "./components/heroTitle";
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
+import { Navbar } from "../components/navigation/container/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
+import { defaultLangData, LangDataContext } from "../context/langContext";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
 import { initLangFromStorage } from "../util/functionalities/opLang";
-import { BrowserSection } from "./musicBrowser/browserSection";
+import { BrowserSection } from "../components/section/container/musicBrowser";
 
 function MusicBrowser() {
 

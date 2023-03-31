@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import { divToBody } from "../util/divToBody";
-import { HeroTitle } from "./components/heroTitle";
-import { Navbar } from "./components/navbar/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
+import { Navbar } from "../components/navigation/container/navbar";
 
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'normalize.css';
 
 import '../css/style.css';
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
+import { defaultLangData, LangDataContext } from "../context/langContext";
 
 function NotFoundSection() {
     const [langData, setLangData] = useState(defaultLangData);

@@ -2,18 +2,18 @@ import React, { createContext, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import { divToBody } from "../util/divToBody";
-import { AboutSummary } from "./about/aboutSummary";
-import { Navbar } from "./components/navbar/navbar";
-import { HeroTitle } from "./components/heroTitle";
+import { AboutSummary } from "../components/text/presentational/aboutSummary";
+import { Navbar } from "../components/navigation/container/navbar";
+import { HeroTitle } from "../components/text/presentational/heroTitle";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'normalize.css';
 
 import '../css/style.css';
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
-import { defaultLangData, LangDataContext } from "./components/context/langContext";
+import { Header } from "../components/section/container/header";
+import { Footer } from "../components/section/container/footer";
+import { defaultLangData, LangDataContext } from "../context/langContext";
 
 function AboutSection() {
     const [langData, setLangData] = useState(defaultLangData);

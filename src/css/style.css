@@ -259,6 +259,7 @@ html {
 
 .music-filter {
     width: 265px;
+    flex-shrink: 0;
     height: fit-content;
     position: static;
     z-index: 2;

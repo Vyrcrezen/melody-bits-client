@@ -1,5 +1,5 @@
 
-interface NameTable  {
+export interface NameTable  {
     id: number;
     name: string;
 }

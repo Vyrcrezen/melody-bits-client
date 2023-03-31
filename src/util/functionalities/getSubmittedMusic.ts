@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { ApprovalMusicDataResponseType} from "../../pages/login/reqSuccessTypes";
+import { ApprovalMusicDataResponseType} from "../../models/reqSuccessTypes";
 
 
 export function getSubmittedMusic({authToken, userId, status}: {authToken?: string, userId?: string, status?: number[]}): Promise<ApprovalMusicDataResponseType> {

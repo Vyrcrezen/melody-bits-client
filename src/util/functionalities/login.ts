@@ -1,5 +1,5 @@
 import { EnvVariables } from "../../env";
-import { UserLoginType } from "../../pages/login/reqSuccessTypes";
+import { UserLoginType } from "../../models/reqSuccessTypes";
 
 interface loginSuccess {
     code: 200;
