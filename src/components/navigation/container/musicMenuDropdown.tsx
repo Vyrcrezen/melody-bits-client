@@ -8,14 +8,14 @@ import { getAuthData } from "../../../util/functionalities/opAuthData";
 import { CardFrontOptions } from "../../../types/cardFrontOptions";
 import { MusicCardData } from "../../../models/musicCard";
 import { deleteMusic } from "../../../util/functionalities/deleteMusic";
+import HamburgerAnimation from "../../shared/util/HamburgerAnimation";
 
-export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFront, closeDropdown, openDropdown }: {
+export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFront, hamburgerAnimation }: {
     authToken?: string,
     musicData: MusicCardData,
     cardFront: CardFrontOptions,
     setCardFront: React.Dispatch<React.SetStateAction<CardFrontOptions>>,
-    closeDropdown: (quick?: boolean) => void,
-    openDropdown: (quick?: boolean) => void,
+    hamburgerAnimation?: HamburgerAnimation
 }) {
 
     const {musicCard: { menu: menuLang }} = _.merge({}, defaultLangData, useContext(LangDataContext));
@@ -39,7 +39,7 @@ export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFron
                         btnText={menuLang.overview}
                         Options={{ border: false }}
                         onClick={() => {
-                            closeDropdown();
+                            hamburgerAnimation?.playCloseAnim();
                             if (cardFront !== 'overview') {
                                 setCardFront("overview");
                             }
@@ -49,7 +49,7 @@ export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFron
                         btnText={menuLang.details}
                         Options={{ border: false }}
                         onClick={() => {                            
-                            closeDropdown();
+                            hamburgerAnimation?.playCloseAnim();
                             if (cardFront !== 'details') {
                                 setCardFront("details");
                             }
@@ -59,7 +59,7 @@ export function MusicMenuDropdown({ authToken, musicData, cardFront, setCardFron
                         btnText={menuLang.comments}
                         Options={{ border: false }}
                         onClick={() => {                            
-                            closeDropdown();
+                            hamburgerAnimation?.playCloseAnim();
                             if (cardFront !== 'comments') {
                                 setCardFront("comments");
                             }
