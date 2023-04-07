@@ -15,7 +15,8 @@ export const sitemap = {
     // Media content
     mediaContent: {
         svg: '/media/svg',
-        carouselImages: '/media/img/carousel'
+        carouselImages: '/media/img/carousel',
+        lottie: '/media/lottie'
 
     },
     

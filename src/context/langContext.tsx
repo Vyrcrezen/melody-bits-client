@@ -8,6 +8,13 @@ export const defaultLangData = {
         "kilo": "k",
         "mega": "million"
     },
+    "timePostfix": {
+        "hour": "h",
+        "day": "d",
+        "week": "w",
+        "month": "m",
+        "year": "y"
+    },
     "nav": {
         "home": "Home",
         "browse": "Browse",
@@ -79,7 +86,21 @@ export const defaultLangData = {
         "source": "Source",
         "uploaded": "Uploaded",
         "approver": "Approver",
-        "tagList": "Tag List"
+        "tagList": "Tag List",
+
+        "commentSide": {
+            "dev": "dev",
+            "mod": "mod",
+            "report": "Report",
+            "edit": "Edit",
+            "delete": "Delete",
+            "reply": "Reply",
+            "loadReplies": "Load Replies",
+            "writeComment": "Write comment",
+            "newComment": "New Comment",
+            "replyingTo": "Replying to:",
+            "send": "Send"
+        },
     },
     "musicFilter": {
         "orderBy": "Order by",

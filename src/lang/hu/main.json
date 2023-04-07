@@ -6,6 +6,13 @@
 		"kilo": "ezer",
 		"mega": "millió"
 	},
+	"timePostfix": {
+        "hour": "óra",
+        "day": "nap",
+        "week": "hét",
+        "month": "hó",
+        "year": "év"
+    },
 	"nav": {
 		"home": "Főoldal",
 		"browse": "Böngészés",
@@ -74,7 +81,21 @@
 		"source": "Forrás",
 		"uploaded": "Feltöltve",
 		"approver": "Jóváhagyta",
-		"tagList": "Cimkék"
+		"tagList": "Cimkék",
+
+		"commentSide": {
+            "dev": "dev",
+            "mod": "mod",
+            "report": "Jelentés",
+            "edit": "Szerkesztés",
+            "delete": "Törlés",
+            "reply": "Válasz",
+            "loadReplies": "Válaszok betöltése",
+            "writeComment": "Komment írása",
+            "newComment": "Új komment",
+            "replyingTo": "Válasz felhasználónak:",
+            "send": "Küldés"
+        }
 	},
 	"musicFilter": {
 		"orderBy": "Rendezés",

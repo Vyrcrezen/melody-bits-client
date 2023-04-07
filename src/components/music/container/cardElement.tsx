@@ -6,11 +6,13 @@ import { CardFrontOptions } from "../../../types/cardFrontOptions";
 import { CardAudioPlayer, CoverImage, MusicCardDetails, MusicOverviewData, MusicOverviewFooter, MusicTitleBar } from "./cardElements";
 import { defaultLangData, LangDataContext } from "../../../context/langContext";
 import MusicTagButtons from "../presentational/MusicTagButtons";
+import CommentBubble from "./CommentBubble";
+import CommentEditor from "./CommentEditor";
 
 export function MusicCard({ musicData, authToken, onTagClick, activeTags }: { musicData: MusicCardData, authToken?: string, onTagClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, tagItem: NameTable) => void, activeTags?: NameTable[] }) {
 
     // const hrefRoot = window.location.href.includes('?') ? window.location.href.substring(0, window.location.href.indexOf('?')) : window.location.href;
-    const { numPostfix: numPostfixLang, musicCard: musicCardLang } = _.merge({}, defaultLangData, useContext(LangDataContext));
+    const { numPostfix: numPostfixLang, timePostfix: timePostfixLang, musicCard: musicCardLang } = _.merge({}, defaultLangData, useContext(LangDataContext));
 
     const [numPlays, setNumPlays] = useState(musicData.num_played);
     const [cardFront, setCardFront] = useState<CardFrontOptions>('overview');
@@ -32,7 +34,10 @@ export function MusicCard({ musicData, authToken, onTagClick, activeTags }: { mu
                 <>
                     {/* <!-- Card title --> */}
                     <MusicTitleBar musicData={musicData} authToken={authToken} cardFront={cardFront} setCardFront={setCardFront} />
-                    <div className="h-100">Comments not yet implemented</div>
+                    {/* A single comment bubble for now */}
+                    <CommentBubble commentSideLang={musicCardLang.commentSide} timePostfixLang={timePostfixLang} />
+                    {/* The comment editor widget */}
+                    <CommentEditor commentSideLang={musicCardLang.commentSide} />
                     {/* <!-- Card Audio Player --> */}
                     <CardAudioPlayer musicData={musicData} authToken={authToken} setNumPlays={setNumPlays} />
                 </>

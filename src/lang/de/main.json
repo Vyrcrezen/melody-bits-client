@@ -6,6 +6,13 @@
     "kilo": "k",
     "mega": "million"
   },
+  "timePostfix": {
+    "hour": "h",
+    "day": "T",
+    "week": "W",
+    "month": "M",
+    "year": "J"
+    },
   "nav": {
     "home": "Startseite",
     "browse": "Durchsuchen",
@@ -77,7 +84,21 @@
     "source": "Quelle",
     "uploaded": "Hochgeladen",
     "approver": "Genehmigt von",
-    "tagList": "Tag-Liste"
+    "tagList": "Tag-Liste",
+
+    "commentSide": {
+      "dev": "Entwickler",
+      "mod": "Mod",
+      "report": "Melden",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "reply": "Antworten",
+      "loadReplies": "Antworten laden",
+      "writeComment": "Kommentar schreiben",
+      "newComment": "Neuer Kommentar",
+      "replyingTo": "Antworten auf:",
+      "send": "Senden"
+      }
   },
   "musicFilter": {
     "orderBy": "Sortieren nach",

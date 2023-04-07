@@ -4,7 +4,6 @@ import { MusicCardData } from "../../../models/musicCard";
 import { MusicFilter } from "../../music/container/musicFilter";
 import { getAuthData } from "../../../util/functionalities/opAuthData";
 import { MinimizedPanelBar } from "../../navigation/presentational/minimizedPanelBar";
-import { VyBtn } from "../../shared/container/vyClickable";
 import { MusicCard } from "../../music/container/cardElement";
 import { getMusic } from "../../../util/functionalities/getMusic";
 import _ from "lodash";
@@ -13,6 +12,7 @@ import { VyPagination } from "../../navigation/container/pagination";
 import { MusicPaginationType } from "../../../models/reqSuccessTypes";
 import { MusicFilterStates } from "../../music/model/musicFilterStates";
 import { getFlashTagList } from "../../../util/functionalities/opFlashStore";
+import VyButton from "../../shared/presentational/VyButton";
 
 export function BrowserSection() {
     const [needNewMusicList, setNeedNewMusicList] = useState(true);
@@ -86,7 +86,7 @@ export function BrowserSection() {
                             ? null
                             : <div className="mb-2">
                                 <MinimizedPanelBar buttons={[
-                                    <VyBtn key={'mini-bar-nav-btn'} btnText="Filters" onClick={() => { changeFilterOpen(); }} />
+                                    <VyButton key={'mini-bar-nav-btn'} btnText="Filters" onClick={() => { changeFilterOpen(); }} />
                                 ]} />
                             </div>
                     }

@@ -81,12 +81,17 @@ export class VyButtonClass {
     }
 }
 
-// Buttons
+/**
+ * @deprecated Please use VyButton from VyButton.tsx instead
+ */
 export function VyBtn({btnText, onClick, Options}: { btnText: string | JSX.Element, onClick: React.MouseEventHandler<HTMLButtonElement>, Options?: ButtonOptions }) {
     const vyButton = new VyButtonClass(btnText, onClick, Options);
     return vyButton.getButtonElement();
 }
 
+/**
+ * @deprecated Please use VyButton from VyButton.tsx instead
+ */
 export function VyBtnLarge({btnText, onClick, Options}: { btnText: string | JSX.Element, onClick: React.MouseEventHandler<HTMLButtonElement>, Options?: ButtonOptions }) {
     const mOptions = { ...(Options || {}), moreClassNames: (Options?.moreClassNames ?? '') + ' fs-5'} as ButtonOptions;
 

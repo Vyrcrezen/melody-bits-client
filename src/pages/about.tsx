@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import { divToBody } from "../util/divToBody";
@@ -14,9 +14,15 @@ import '../css/style.css';
 import { Header } from "../components/section/container/header";
 import { Footer } from "../components/section/container/footer";
 import { defaultLangData, LangDataContext } from "../context/langContext";
+import { initLangFromStorage } from "../util/functionalities/opLang";
+
+// DON'T LEAVE THIS HERE!
+import '../css/musicCard.css';
 
 function AboutSection() {
     const [langData, setLangData] = useState(defaultLangData);
+
+    useEffect(() => initLangFromStorage(langData, setLangData));
 
     return (
         <LangDataContext.Provider value={langData}>

@@ -6,6 +6,14 @@
     "kilo": "k",
     "mega": "million"
   },
+  "timePostfix": {
+    "hour": "h",
+    "day": "d",
+    "week": "sem",
+    "month": "mes",
+    "year": "año"
+  },
+
   "nav": {
     "home": "Inicio",
     "browse": "Explorar",
@@ -78,7 +86,21 @@
     "source": "Fuente",
     "uploaded": "Subido",
     "approver": "Aprobador",
-    "tagList": "Lista de etiquetas"
+    "tagList": "Lista de etiquetas",
+
+    "commentSide": {
+      "dev": "des.",
+      "mod": "mod.",
+      "report": "Reportar",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "reply": "Responder",
+      "loadReplies": "Cargar respuestas",
+      "writeComment": "Escribir comentario",
+      "newComment": "Nuevo comentario",
+      "replyingTo": "Respondiendo a:",
+      "send": "Enviar"
+    }
   },
   "musicFilter": {
     "orderBy": "Ordenar por",
@@ -198,5 +220,5 @@
     "musicUploadCopyright": "Solo aceptamos contenido que haya sido licenciado bajo una licencia Creative Commons o una licencia similar que permita su uso y distribución gratuitos siempre que se otorgue el crédito adecuado a los creadores originales.",
     "musicUploadCopyrightLong": "En Melody Bits, valoramos y respetamos enormemente la importancia de las leyes de derechos de autor. Solo aceptamos contenido que haya sido licenciado bajo una licencia Creative Commons o una licencia similar que permita su uso y distribución gratuitos siempre que se otorgue el crédito adecuado a los creadores originales. Esto nos ayuda a asegurarnos de que el contenido que compartimos sea legalmente sólido y esté en línea con nuestro compromiso de promover obras creativas de manera responsable.",
     "musicUploadLink": "Asegúrese de que la fuente que proporcione a través del enlace indique claramente lo anterior para el contenido."
-    }
+  }
 }

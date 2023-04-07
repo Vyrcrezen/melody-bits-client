@@ -45,8 +45,6 @@ export default class HamburgerAnimation {
         if (this.buttonElement) {
             this.buttonElement.classList.replace('vy-bg-selection', 'vy-bg-white');
         }
-
-        console.log('Close animation called');
     }
 
     playOpenAnim() {
